@@ -1,14 +1,13 @@
 # API token for simple authentication, Use in header
 
-name::  x-api-key
-value::  5bCbNTZtmyB8pSPrDSc6Wu2nN25WSXaWQlZ7KuGCgE
-Example::  header( 'x-api-key: 5bCbNTZtmyB8pSPrDSc6Wu2nN25WSXaWQlZ7KuGCgE');
+## name::  x-api-key
+## value::  5bCbNTZtmyB8pSPrDSc6Wu2nN25WSXaWQlZ7KuGCgE
+## Example::  header( 'x-api-key: 5bCbNTZtmyB8pSPrDSc6Wu2nN25WSXaWQlZ7KuGCgE');
 
 ==========================================================================================
 # Get ALL Subscribers
-# Method:: GET
-
-# Endpoint::  /api/user
+## Method:: GET
+## Endpoint::  /api/user
 
 <?php
 
