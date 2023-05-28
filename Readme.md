@@ -31,6 +31,7 @@ $response = curl_exec($curl);
 
 curl_close($curl);
 echo $response;
+
 ### Response 
 
 {
@@ -91,6 +92,7 @@ echo $response;
     ]
 }
 
+
 ## Add Subscriber
 - Method:: POST
 - Endpoint: /api/user/
@@ -124,6 +126,7 @@ $response = curl_exec($curl);
 
 curl_close($curl);
 echo $response;
+
 ### Response
 
 {
@@ -135,6 +138,7 @@ echo $response;
         "email": "peterparker@gmail.com"
     }
 }
+
 
 ## update Subscriber
 - Method:: POST
@@ -170,17 +174,15 @@ $response = curl_exec($curl);
 curl_close($curl);
 echo $response;
 
-# Response
-
+### Response
 {"status":1,"msg":"Subscriber updated Successfully"}
 
-============================================================================================
 
-# DELETE Subscriber
+## DELETE Subscriber
 
-# Method:: POST
-# _method::  DELETE -> use DELETE method as the form data paramter to delete the records
-# Endpoint: /api/user/1
+- Method:: POST
+- _method::  DELETE -> use DELETE method as the form data paramter to delete the records
+- Endpoint: /api/user/1
 
 form_data in array
 $arr=['_method'=>'DELETE']
