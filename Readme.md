@@ -1,13 +1,12 @@
-# API token for simple authentication, Use in header
+## API token for simple authentication, Use in header
 
-## name::  x-api-key
-## value::  5bCbNTZtmyB8pSPrDSc6Wu2nN25WSXaWQlZ7KuGCgE
-## Example::  header( 'x-api-key: 5bCbNTZtmyB8pSPrDSc6Wu2nN25WSXaWQlZ7KuGCgE');
+- name::  x-api-key
+- value::  5bCbNTZtmyB8pSPrDSc6Wu2nN25WSXaWQlZ7KuGCgE
+- Example::  header( 'x-api-key: 5bCbNTZtmyB8pSPrDSc6Wu2nN25WSXaWQlZ7KuGCgE');
 
-==========================================================================================
-# Get ALL Subscribers
-## Method:: GET
-## Endpoint::  /api/user
+## Get ALL Subscribers
+- Method:: GET
+- Endpoint::  /api/user
 
 <?php
 
@@ -32,7 +31,7 @@ $response = curl_exec($curl);
 
 curl_close($curl);
 echo $response;
-# Response 
+### Response 
 
 {
     "status": 1,
@@ -51,12 +50,10 @@ echo $response;
 }
 
 ?>
-==========================================================================================
-# Get Single Subscriber
-# Method:: GET
 
-# EndPoint: /api/user/2 
-
+## Get Single Subscriber
+- Method:: GET
+- EndPoint: /api/user/2 
 <?php
 
 $curl = curl_init();
@@ -81,7 +78,7 @@ $response = curl_exec($curl);
 curl_close($curl);
 echo $response;
 
-# Response 
+### Response 
 
 {
     "status": 1,
@@ -93,11 +90,10 @@ echo $response;
         },
     ]
 }
-===========================================================================================
 
-# Add Subscriber
-# Method:: POST
-# Endpoint: /api/user/
+## Add Subscriber
+- Method:: POST
+- Endpoint: /api/user/
 
 form_data in array
 $arr=['name'=>'Arvind Parkash','email'=>'arvind@gmail.com']
@@ -128,7 +124,7 @@ $response = curl_exec($curl);
 
 curl_close($curl);
 echo $response;
-# Response
+### Response
 
 {
     "status": 1,
@@ -140,17 +136,14 @@ echo $response;
     }
 }
 
+## update Subscriber
+- Method:: POST
+- _method::  PUT :: use PUT method as the form data to update the subscriber data
+- Endpoint: /api/user/1
+- form_data in array
+- $arr=['name'=>'Arvind Parkash','email'=>'arvind@gmail.com','_method'=>'PUT']
 
-========================================================================================
-# update Subscriber
-# Method:: POST
-# _method::  PUT :: use PUT method as the form data to update the subscriber data
-# Endpoint: /api/user/1
-
-form_data in array
-$arr=['name'=>'Arvind Parkash','email'=>'arvind@gmail.com','_method'=>'PUT']
-
-Example
+### Example
 
 <?php
 
@@ -219,5 +212,5 @@ $response = curl_exec($curl);
 curl_close($curl);
 echo $response;
 
-# Response
+### Response
 {"status":1,"msg":"Subscriber deleted Successfully"}
