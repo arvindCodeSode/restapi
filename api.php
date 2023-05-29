@@ -92,6 +92,7 @@ class Api
     function details( $id=false,$email=false )
     {
         global $mysqli;
+        if(!$id || !$email) return false;
         $id = $mysqli->real_escape_string($id);
         $email = $mysqli->real_escape_string($email);
         if(  $id && $email )

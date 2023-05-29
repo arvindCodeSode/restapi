@@ -10,35 +10,9 @@ class Route
         }
         return "http";
     }
-    function doRedirectToHTTPS($path)
-    {
-        global $force_https;
-        if($force_https)
-        {
-            $proto=self::getProtocol();
-            if($proto=='http')
-            {
-                global $dont_force_https_list; // for not https force
-                $list=$dont_force_https_list;
-                $path=trim($path,'/');
-                $path='/'.$path.'/';
-                foreach($list as $val)
-                {
-                    if(strpos($path, $val)===0)
-                    {
-                        return;
-                    }
-                }
-                header('Location: https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
-                return;
-            }
-        }
-    }
     function doRoute()
     {
-        global $is_gcp;
         global $base_dir;
-        global $default_controller;
         $temp_gcp_path=parse_url($_SERVER['REQUEST_URI']);
 
 
@@ -46,8 +20,6 @@ class Route
         {
             $_GET['page']=$temp_gcp_path['path'];
         }
-
-        self::doRedirectToHTTPS(((isset($_GET['page']))? $_GET['page']:''));
         if(isset($_GET['page']))
         {
             $parse=parse_url($_GET['page']);
@@ -123,16 +95,6 @@ class Route
     {
         http_response_code(404);
         echo "404";
-    }
-    function assignProduct(){
-        if(isset($_GET['product']))
-        {
-            global $products;
-            $product= strtolower($_GET['product']);
-            if(array_search($product, $products) !==false){
-                $_SESSION['session_product']= $product;
-            }
-        }
     }
 }
 
